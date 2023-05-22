@@ -3,12 +3,22 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Company company = new Company();
-        company.hire(new Manager());
-        company.hire(new Manager());
-        company.hire(new Operator());
-        company.hire(new TopManager(company));
-        company.hireAll(generateManagerList(10));
-        company.getList();
+//        company.hire(new Manager());
+//        company.hire(new Manager());
+//        company.hire(new Operator());
+//        company.hire(new TopManager(company));
+        company.hireAll(generateOperatorList(180));
+        company.hireAll(generateManagerList(80));
+        company.hireAll(generateTopManagerList(10, company));
+        ArrayList <Employee> top = new ArrayList<>(company.getTopSalaryStaff(10));
+        for (int i = 0; i < top.size(); i++) {
+            System.out.println(top.get(i).getMonthSalary());
+        }
+        System.out.println("-------");
+        ArrayList <Employee> low = new ArrayList<>(company.getLowestSalaryStaff(30));
+        for (int i = 0; i < top.size(); i++) {
+            System.out.println(low.get(i).getMonthSalary());
+        }
     }
     public static ArrayList<Employee> generateManagerList(int count) {
         ArrayList <Employee> emp = new ArrayList<>();
@@ -31,6 +41,4 @@ public class Main {
         }
         return emp;
     }
-
-    // написать методы, возвращающие списки топовых и худших сотрудников
 }

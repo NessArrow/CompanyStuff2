@@ -5,4 +5,7 @@ public class Operator extends Staff{
         setIncome();
         setSalary(FIX);
     }
+    protected void setSalary(int FIX) {
+        salary = FIX;
+    }
 }

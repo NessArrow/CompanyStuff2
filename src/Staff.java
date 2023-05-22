@@ -1,4 +1,4 @@
-abstract class Staff implements Employee, Comparable<Employee>{
+abstract class Staff implements Employee {
     double income;
     int salary;
 
@@ -16,17 +16,5 @@ abstract class Staff implements Employee, Comparable<Employee>{
     }
     protected void setSalary() {
         salary = 0;
-    }
-    protected void setSalary(int fix) {
-        salary = fix;
-    }
-
-    @Override
-    public int compareTo(Employee o) {
-        if (salary > o.getMonthSalary()) {
-            return 1;
-        } else if (salary < o.getMonthSalary()) {
-            return -1;
-        } else return 0;
     }
 }

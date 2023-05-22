@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Company {
     private int numEmployees = 0;
@@ -31,16 +30,44 @@ public class Company {
         System.out.println(totalIncome);
         System.out.println(numEmployees);
     }
-//    List<Employee> getTopSalaryStaff(int count) {
-//        if (count <= numEmployees && count > 0) {
-//            //нужен компаратор и здесь нужно сравнивать
-//        } else return null;
-//    }
-//    List<Employee> getLowestSalaryStaff(int count) {
-//        if (count <= numEmployees && count > 0) {
-//
-//        } else return null;
-//    }
+    List<Employee> getTopSalaryStaff(int count) {
+        List<Employee> list = new ArrayList<>();
+        if (count <= numEmployees && count > 0) {
+            employees.sort(new Comparator<Employee>() {
+                @Override
+                public int compare(Employee o1, Employee o2) {
+                    if (o1.getMonthSalary() > o2.getMonthSalary()) {
+                        return -1;
+                    } else if (o1.getMonthSalary() < o2.getMonthSalary()) {
+                        return 1;
+                    } else return 0;
+                }
+            });
+            for (int i = 0; i < count; i++) {
+                list.add(employees.get(i));
+            }
+            return list;
+        } else return null;
+    }
+    List<Employee> getLowestSalaryStaff(int count) {
+        List<Employee> list = new ArrayList<>();
+        if (count <= numEmployees && count > 0) {
+            employees.sort(new Comparator<Employee>() {
+                @Override
+                public int compare(Employee o1, Employee o2) {
+                    if (o1.getMonthSalary() > o2.getMonthSalary()) {
+                        return 1;
+                    } else if (o1.getMonthSalary() < o2.getMonthSalary()) {
+                        return -1;
+                    } else return 0;
+                }
+            });
+            for (int i = 0; i < count; i++) {
+                list.add(employees.get(i));
+            }
+            return list;
+        } else return null;
+    }
     private void addIncome(double a) {
         totalIncome += a;
     }
