@@ -5,12 +5,10 @@ public class Manager implements Employee {
     final double BONUS = 0.05;
     private double income;
     private int salary;
-    private Company company;
 
-    public Manager(Company company) {
+    public Manager() {
         setIncome();
         setSalary();
-        this.company = company;
     }
 
     @Override
