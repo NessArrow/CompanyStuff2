@@ -4,6 +4,9 @@ public class Company {
     private int numEmployees = 0;
     private double totalIncome = 0;
     ArrayList<Employee> employees = new ArrayList<>();
+    public int getNumEmployees() {
+        return numEmployees;
+    }
     public void hire(Employee employee) {
         employees.add(employee);
         addIncome(employee.getIncome());
@@ -70,5 +73,10 @@ public class Company {
     }
     private void addIncome(double a) {
         totalIncome += a;
+    }
+    public void fireList(List<Employee> emp) {
+        for (Employee e : emp) {
+            fire(e);
+        }
     }
 }

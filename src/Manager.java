@@ -1,7 +1,7 @@
 public class Manager extends Staff {
     final int MIN_INCOME = 115000;
     final int MAX_INCOME = 140000;
-    final int FIX = 30000;
+    final int FIX = 40000;
     final double MANAGER_BONUS = 0.05;
 
     public Manager() {

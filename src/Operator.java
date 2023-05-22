@@ -1,5 +1,5 @@
 public class Operator extends Staff{
-    final int FIX = 10000;
+    final int FIX = 20000;
 
     public Operator() {
         setIncome();

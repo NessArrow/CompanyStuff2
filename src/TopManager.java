@@ -1,5 +1,5 @@
 public class TopManager extends Staff{
-    final int FIX = 40000;
+    final int FIX = 100000;
     final double BONUS = 1.5;
 
     public TopManager(Company company) {
